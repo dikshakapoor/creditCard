@@ -1,30 +1,47 @@
-import {formElement,userNameElement,marriedElement,DOJElement,emailElement,phoneNumberElement,createPasswordElement,confirmPasswordElement} from "./view";
-import FormClass from "./modal";
+const cleaveCC = new Cleave(".input", {
+    creditCard: true,
+    delimiter: "-",
+    onCreditCardTypeChanged: function (type) {
+      const cardBrand = document.getElementById("cardBrand"),
+        visa = "fab fa-cc-visa",
+        mastercard = "fab fa-cc-mastercard",
+        amex = "fab fa-cc-amex",
+        diners = "fab fa-cc-diners-club",
+        jcb = "fab fa-cc-jcb",
+        discover = "fab fa-cc-discover";
+  
+      switch (type) {
+        case "visa":
+          cardBrand.setAttribute("class", visa);
+          break;
+        case "mastercard":
+          cardBrand.setAttribute("class", mastercard);
+          break;
+        case "amex":
+          cardBrand.setAttribute("class", amex);
+          break;
+        case "diners":
+          cardBrand.setAttribute("class", diners);
+          break;
+        case "jcb":
+          cardBrand.setAttribute("class", jcb);
+          break;
+        case "discover":
+          cardBrand.setAttribute("class", discover);
+          break;
+        default:
+          cardBrand.setAttribute("class", "");
+          break;
+      }
+    },
+  });
 
-const formObject = new FormClass();
-debugger;
-userNameElement.value = formObject.formData.userName;
-marriedElement.value = formObject.formData.married.checked;
-debugger;
-DOJElement.value = formObject.formData.DOJ;
-emailElement.value =formObject.formData.email;
-phoneNumberElement.value = formObject.formData.phoneNumber;
-createPasswordElement.value = formObject.formData.createPassword;
-confirmPasswordElement.value =formObject.formData.confirmPassword;
 
-formElement.addEventListener('submit', (e) => { 
-    e.preventDefault();
-    debugger;
-    const formData = new FormData(formElement);
-    formObject.getFormData(formData)
-    formObject.callApi()
-    validate(formData)
-})
-
-const validate = (formData)=>{
-    const createPassword = formData.get("createPassword");
-    const confirmedPassword = formData.get("confirmPassword");
-    if (createPassword!== confirmedPassword) {alert("password don't match")
-    return false}
-    formObject.getFormData(formData)
-}
+  const cleaveDate = new Cleave(".expire_Date_input", {
+    date: true,
+    datePattern: ["m", "y"],
+  });
+  
+  const cleaveCCV = new Cleave(".cvv_input", {
+    blocks: [3],
+  });

@@ -1,0 +1,88 @@
+*{
+  margin: 0px;
+  border:0px;
+  box-sizing:border-box;
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  background: url("https://imgs.mi9.com/uploads/abstract/4147/abstract-blue-backgrounds-34_1920x1200_71451.jpg") no-repeat top center;
+}
+
+.checkout_form{
+  position: absolute;
+  top: 50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  background: rgba(255,255,255,.35);
+  border-radius: 0.6em;
+  padding : 1em;
+  max-width: 30em;
+}
+
+input[type="text"]{
+  padding: 1em;
+  text-align: center;
+  font-size:1em;
+  margin:0.5em;
+  border-radius: 0.6em;
+}
+
+.card_number{
+  display: flex;
+}
+.card_number input {
+  text-align: left;
+  width: 80%;
+}
+
+.card_group{
+  display: flex;
+  justify-content: space-between;
+}
+
+.expire_Date{
+  display: flex;
+  max-width: 50%;
+}
+
+.expire_Date input{
+  max-width: 40%;
+  margin-right: 0.6em;
+}
+
+.cvv{
+  display: flex;
+  max-width: 50%;
+  justify-content: flex-end;
+}
+
+ .cvv_input{
+  max-width: 40%;
+  margin-right: 0.6em;
+}
+
+.button{
+  width: 100%;
+  border-radius: 0.6em;
+  height: 2em;
+  margin-top: 0.4em;
+  cursor: pointer;
+  color:black;
+  background-color: #4267B2;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+  color: blue;
+}
+
+.cardType{
+  font-size:1em;
+  padding: 1em;
+  border-radius: 0.6em;
+}
+
