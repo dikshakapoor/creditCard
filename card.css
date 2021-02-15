@@ -21,7 +21,7 @@ body{
   max-width: 30em;
 }
 
-input[type="text"]{
+input{
   padding: 1em;
   text-align: center;
   font-size:1em;
@@ -29,7 +29,7 @@ input[type="text"]{
   border-radius: 0.6em;
 }
 
-.card_number{
+#card_number{
   display: flex;
 }
 .card_number input {
@@ -42,13 +42,21 @@ input[type="text"]{
   justify-content: space-between;
 }
 
+.expire_Date_input{
+  padding: 1em;
+  text-align: center;
+  font-size:1em;
+  margin:0.5em;
+  border-radius: 0.6em;
+  color: blue
+}
+
 .expire_Date{
   display: flex;
   max-width: 50%;
 }
 
 .expire_Date input{
-  max-width: 40%;
   margin-right: 0.6em;
 }
 

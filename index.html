@@ -13,20 +13,21 @@
 
 <body>
     <form class="checkout_form">
-        <div class=card_number>
-            <input type="text" class="input" placeholder="0000 0000 0000">
+        <div id=card_number>
+            <input type="text" name="placeholder" class="input" placeholder="0000 0000 0000 0000" required>
             <div class="cardType"><i id="cardBrand"></i></div>
         </div>
         <div class="card_group">
             <div class="expire_Date">
-                <input type="text" pattern="/^(0[1-9]|1[0-2])\/\d{2}$/" class=" expire_Date_input" placeholder="MM/YY">
+                <input type="month" name="expireDate" class=" expire_Date_input" placeholder="MM/YY" min="2021-01"
+                    required>
             </div>
             <div class="cvv">
-                <input type="text" class="cvv_input" maxlength=3 placeholder="000">
+                <input type="text" name="cvv" class="cvv_input" maxlength=3 placeholder="000" required>
             </div>
         </div>
         <div>
-            <input class="button" type="button" value="PAY"></button>
+            <input class="button" type="submit" value="PAY"></button>
         </div>
     </form>
     <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
